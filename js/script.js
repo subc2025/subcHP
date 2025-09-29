@@ -31,6 +31,24 @@ function initTabNavigation() {
         });
     });
 
+    // Brand logo click (home button)
+    const brandButton = document.querySelector('.nav-brand');
+    if (brandButton) {
+        brandButton.addEventListener('click', function() {
+            switchTab('home');
+            updateTabButtonStates('home');
+        });
+    }
+
+    // Home back button
+    const homeBackBtn = document.querySelector('.home-back-btn');
+    if (homeBackBtn) {
+        homeBackBtn.addEventListener('click', function() {
+            switchTab('home');
+            updateTabButtonStates('home');
+        });
+    }
+
     // Mobile tab buttons
     mobileTabButtons.forEach(button => {
         button.addEventListener('click', function() {

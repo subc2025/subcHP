@@ -98,6 +98,25 @@ body {
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    padding: 0;
+}
+
+.nav-brand:hover {
+    transform: translateY(-1px);
+    opacity: 0.8;
+}
+
+.nav-brand:hover .brand-icon {
+    transform: scale(1.05);
+}
+
+.nav-brand:active {
+    transform: translateY(0);
 }
 
 .brand-icon {
@@ -222,6 +241,35 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
+    gap: 0.75rem;
+}
+
+.home-back-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.home-back-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+    opacity: 1;
+    box-shadow: var(--shadow-sm);
+}
+
+.home-back-btn:active {
+    transform: scale(0.95);
 }
 
 .quick-apply-btn {
@@ -1747,6 +1795,10 @@ section {
         padding: 0.8rem;
         min-width: 50px;
         justify-content: center;
+    }
+    
+    .home-back-btn {
+        display: none;
     }
 }
 
