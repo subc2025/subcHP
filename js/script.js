@@ -1,155 +1,188 @@
-// ステップアップバドミントンクラブ - JavaScript
+// Modern Step Up Badminton Club - JavaScript
 
-// DOM要素の取得
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+// DOM Elements
+const tabButtons = document.querySelectorAll('.tab-btn');
+const mobileTabButtons = document.querySelectorAll('.mobile-tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileNav = document.getElementById('mobile-nav');
 const contactForm = document.getElementById('contactForm');
 
-// ページ読み込み時の初期化
+// Initialize application
 document.addEventListener('DOMContentLoaded', function() {
-    // アニメーションの初期化
-    initScrollAnimations();
-    
-    // ナビゲーションの初期化
-    initNavigation();
-    
-    // フォームの初期化
+    initTabNavigation();
+    initMobileNavigation();
     initContactForm();
-    
-    // ヘッダーのスクロール効果
+    initScrollAnimations();
     initHeaderScrollEffect();
-    
-    // スムーススクロールの初期化
-    initSmoothScroll();
 });
 
-// モバイルナビゲーション
-function initNavigation() {
-    // ハンバーガーメニューのトグル
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        
-        // ボディのスクロールをロック/アンロック
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // ナビゲーションリンクのクリック処理
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // モバイルメニューを閉じる
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            document.body.style.overflow = '';
+// Tab Navigation System
+function initTabNavigation() {
+    // Desktop tab buttons
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            switchTab(targetTab);
             
-            // アクティブなリンクの設定
-            navLinks.forEach(l => l.classList.remove('active'));
+            // Update button states
+            tabButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
         });
     });
 
-    // 画面サイズ変更時の処理
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            document.body.style.overflow = '';
+    // Mobile tab buttons
+    mobileTabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            switchTab(targetTab);
+            
+            // Update mobile button states
+            mobileTabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Update desktop button states
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.tab === targetTab) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu
+            closeMobileNav();
+        });
+    });
+
+    // Handle buttons that switch to tabs (like hero buttons)
+    document.addEventListener('click', function(e) {
+        if (e.target.matches('[data-tab]') || e.target.closest('[data-tab]')) {
+            const element = e.target.matches('[data-tab]') ? e.target : e.target.closest('[data-tab]');
+            const targetTab = element.dataset.tab;
+            
+            if (targetTab) {
+                e.preventDefault();
+                switchTab(targetTab);
+                
+                // Update all button states
+                updateTabButtonStates(targetTab);
+            }
         }
     });
 }
 
-// スムーススクロール
-function initSmoothScroll() {
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // 内部リンクかチェック
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                
-                const target = document.querySelector(href);
-                if (target) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
+function switchTab(tabName) {
+    // Hide all tab contents
+    tabContents.forEach(content => {
+        content.classList.remove('active');
     });
 
-    // ボタンのスムーススクロール
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            const target = document.querySelector(href);
-            
-            if (target && href !== '#') {
-                e.preventDefault();
-                
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+    // Show target tab content
+    const targetContent = document.getElementById(tabName);
+    if (targetContent) {
+        targetContent.classList.add('active');
+        
+        // Scroll to top smoothly
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+        
+        // Trigger animations for the new tab
+        triggerTabAnimations(targetContent);
+    }
+}
+
+function updateTabButtonStates(activeTab) {
+    // Update desktop buttons
+    tabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === activeTab);
+    });
+    
+    // Update mobile buttons
+    mobileTabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === activeTab);
     });
 }
 
-// ヘッダーのスクロール効果
+function triggerTabAnimations(tabElement) {
+    // Add fade-in animation to cards and sections
+    const animationTargets = tabElement.querySelectorAll(`
+        .feature-card,
+        .info-card,
+        .schedule-card,
+        .coach-card,
+        .audience-item
+    `);
+
+    animationTargets.forEach((target, index) => {
+        target.style.opacity = '0';
+        target.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            target.style.opacity = '1';
+            target.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+}
+
+// Mobile Navigation
+function initMobileNavigation() {
+    mobileToggle.addEventListener('click', function() {
+        toggleMobileNav();
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(e) {
+        if (mobileNav.classList.contains('active') && 
+            !mobileNav.contains(e.target) && 
+            !mobileToggle.contains(e.target)) {
+            closeMobileNav();
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMobileNav();
+        }
+    });
+}
+
+function toggleMobileNav() {
+    mobileToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+}
+
+function closeMobileNav() {
+    mobileToggle.classList.remove('active');
+    mobileNav.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Header Scroll Effect
 function initHeaderScrollEffect() {
     const header = document.querySelector('.header');
     let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         const currentScrollY = window.scrollY;
         
-        // スクロール量に応じてヘッダーの透明度を調整
         if (currentScrollY > 100) {
             header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.15)';
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
         } else {
             header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
         }
-        
-        // アクティブなナビゲーションリンクの設定
-        updateActiveNavLink();
         
         lastScrollY = currentScrollY;
-    });
+    }, 16));
 }
 
-// アクティブなナビゲーションリンクの更新
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const headerHeight = document.querySelector('.header').offsetHeight;
-    const scrollPosition = window.scrollY + headerHeight + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (navLink) {
-                navLink.classList.add('active');
-            }
-        }
-    });
-}
-
-// スクロールアニメーション
+// Scroll Animations
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -160,40 +193,57 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
+                
+                // Add staggered animation for grouped elements
+                const siblings = entry.target.parentElement.children;
+                let delay = 0;
+                
+                Array.from(siblings).forEach((sibling, index) => {
+                    if (sibling === entry.target) {
+                        setTimeout(() => {
+                            sibling.style.opacity = '1';
+                            sibling.style.transform = 'translateY(0)';
+                        }, delay);
+                    }
+                    delay += 100;
+                });
+                
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // アニメーション対象の要素を観察
+    // Observe animation targets
     const animationTargets = document.querySelectorAll(`
         .feature-card,
-        .lesson-info-card,
-        .schedule-item,
-        .coach-card,
-        .about-text,
-        .contact-form-container
+        .info-card,
+        .schedule-card,
+        .audience-item,
+        .hero-image,
+        .about-visual
     `);
 
     animationTargets.forEach(target => {
+        target.style.opacity = '0';
+        target.style.transform = 'translateY(30px)';
+        target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         observer.observe(target);
     });
 }
 
-// お問い合わせフォーム
+// Contact Form Management
 function initContactForm() {
     if (!contactForm) return;
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // フォームの検証
         if (validateForm()) {
             submitForm();
         }
     });
 
-    // リアルタイムバリデーション
+    // Real-time validation
     const requiredFields = contactForm.querySelectorAll('input[required], select[required]');
     requiredFields.forEach(field => {
         field.addEventListener('blur', function() {
@@ -208,19 +258,18 @@ function initContactForm() {
     });
 }
 
-// フォームフィールドの検証
 function validateField(field) {
     const value = field.value.trim();
     let isValid = true;
     let errorMessage = '';
 
-    // 必須チェック
+    // Required field check
     if (field.hasAttribute('required') && !value) {
         isValid = false;
         errorMessage = 'この項目は必須です。';
     }
 
-    // メールアドレスの形式チェック
+    // Email validation
     if (field.type === 'email' && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
@@ -229,7 +278,7 @@ function validateField(field) {
         }
     }
 
-    // 電話番号の形式チェック（任意）
+    // Phone validation (optional)
     if (field.type === 'tel' && value) {
         const phoneRegex = /^[0-9\-\+\(\)\s]+$/;
         if (!phoneRegex.test(value)) {
@@ -238,15 +287,12 @@ function validateField(field) {
         }
     }
 
-    // エラー表示の切り替え
     toggleFieldError(field, isValid, errorMessage);
-
     return isValid;
 }
 
-// フィールドエラー表示の切り替え
 function toggleFieldError(field, isValid, errorMessage) {
-    // 既存のエラーメッセージを削除
+    // Remove existing error message
     const existingError = field.parentNode.querySelector('.error-message');
     if (existingError) {
         existingError.remove();
@@ -259,7 +305,7 @@ function toggleFieldError(field, isValid, errorMessage) {
         field.classList.remove('valid');
         field.classList.add('error');
         
-        // エラーメッセージを追加
+        // Add error message
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.textContent = errorMessage;
@@ -267,7 +313,6 @@ function toggleFieldError(field, isValid, errorMessage) {
     }
 }
 
-// フォーム全体の検証
 function validateForm() {
     const requiredFields = contactForm.querySelectorAll('input[required], select[required]');
     let isFormValid = true;
@@ -282,24 +327,23 @@ function validateForm() {
     return isFormValid;
 }
 
-// フォーム送信処理
 function submitForm() {
     const formData = new FormData(contactForm);
     const submitButton = contactForm.querySelector('button[type="submit"]');
     
-    // ボタンの状態を変更
+    // Update button state
     const originalText = submitButton.innerHTML;
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
     submitButton.disabled = true;
 
-    // 選択されたセッションの取得
+    // Collect selected sessions
     const selectedSessions = [];
     const sessionCheckboxes = contactForm.querySelectorAll('input[name="sessions"]:checked');
     sessionCheckboxes.forEach(checkbox => {
         selectedSessions.push(checkbox.value);
     });
 
-    // フォームデータの整理
+    // Prepare form data
     const formDataObject = {
         name: formData.get('name'),
         email: formData.get('email'),
@@ -310,22 +354,20 @@ function submitForm() {
         message: formData.get('message')
     };
 
-    // メール本文の作成
+    // Create email body
     const emailBody = createEmailBody(formDataObject);
     
-    // メール送信（実際の実装では、バックエンドAPIを呼び出す）
+    // Simulate form submission
     setTimeout(() => {
-        // シミュレーション: 成功レスポンス
         showSuccessMessage(emailBody);
         resetForm();
         
-        // ボタンの状態を元に戻す
+        // Reset button state
         submitButton.innerHTML = originalText;
         submitButton.disabled = false;
     }, 2000);
 }
 
-// メール本文の作成
 function createEmailBody(data) {
     let body = `ステップアップバドミントンクラブへの参加申し込み\n\n`;
     body += `お名前: ${data.name}\n`;
@@ -369,9 +411,7 @@ function createEmailBody(data) {
     return body;
 }
 
-// 成功メッセージの表示
 function showSuccessMessage(emailBody) {
-    // モーダルまたは通知の表示
     const modal = document.createElement('div');
     modal.className = 'success-modal';
     modal.innerHTML = `
@@ -391,19 +431,24 @@ function showSuccessMessage(emailBody) {
                 </button>
             </div>
         </div>
-        <div class="modal-overlay" onclick="closeSuccessModal()"></div>
     `;
 
     document.body.appendChild(modal);
     document.body.style.overflow = 'hidden';
 
-    // アニメーション
+    // Show modal with animation
     setTimeout(() => {
         modal.classList.add('active');
     }, 100);
+
+    // Close modal when clicking overlay
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeSuccessModal();
+        }
+    });
 }
 
-// 成功モーダルを閉じる
 function closeSuccessModal() {
     const modal = document.querySelector('.success-modal');
     if (modal) {
@@ -415,11 +460,10 @@ function closeSuccessModal() {
     }
 }
 
-// フォームのリセット
 function resetForm() {
     contactForm.reset();
     
-    // エラーメッセージとスタイルをクリア
+    // Clear error messages and styles
     const errorMessages = contactForm.querySelectorAll('.error-message');
     errorMessages.forEach(msg => msg.remove());
     
@@ -429,7 +473,27 @@ function resetForm() {
     });
 }
 
-// ユーティリティ関数
+// Utility Functions
+function scrollToForm() {
+    const contactSection = document.getElementById('contact-form');
+    if (contactSection) {
+        // First switch to lessons tab if not already active
+        switchTab('lessons');
+        updateTabButtonStates('lessons');
+        
+        // Wait for tab switch animation, then scroll to form
+        setTimeout(() => {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = contactSection.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }, 300);
+    }
+}
+
 function throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -459,129 +523,118 @@ function debounce(func, wait, immediate) {
     };
 }
 
-// パフォーマンス最適化
-window.addEventListener('scroll', throttle(function() {
-    // スクロール時の処理をスロットル
-}, 16)); // 約60fps
+// Enhanced Interaction Effects
+function initEnhancedEffects() {
+    // Add parallax effect to hero elements
+    window.addEventListener('scroll', throttle(function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.floating-element');
+        
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    }, 16));
 
-// エラーハンドリング
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.feature-card, .info-card, .schedule-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+}
+
+// Keyboard Navigation
+function initKeyboardNavigation() {
+    document.addEventListener('keydown', function(e) {
+        // Tab navigation with keyboard
+        if (e.ctrlKey || e.metaKey) {
+            switch(e.key) {
+                case '1':
+                    e.preventDefault();
+                    switchTab('home');
+                    updateTabButtonStates('home');
+                    break;
+                case '2':
+                    e.preventDefault();
+                    switchTab('about');
+                    updateTabButtonStates('about');
+                    break;
+                case '3':
+                    e.preventDefault();
+                    switchTab('lessons');
+                    updateTabButtonStates('lessons');
+                    break;
+            }
+        }
+        
+        // Escape key to close mobile nav
+        if (e.key === 'Escape') {
+            closeMobileNav();
+            closeSuccessModal();
+        }
+    });
+}
+
+// Performance Monitoring
+function initPerformanceMonitoring() {
+    // Monitor page load performance
+    window.addEventListener('load', function() {
+        if ('performance' in window) {
+            const perfData = performance.timing;
+            const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+            console.log(`Page load time: ${loadTime}ms`);
+        }
+    });
+}
+
+// Error Handling
 window.addEventListener('error', function(e) {
     console.error('JavaScript Error:', e.error);
-});
-
-// ページの表示状態の監視
-document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'visible') {
-        // ページが再表示された時の処理
+    
+    // Show user-friendly error message for critical errors
+    if (e.error && e.error.message.includes('fetch')) {
+        showErrorMessage('接続エラーが発生しました。しばらく時間をおいてから再度お試しください。');
     }
 });
 
-// CSS for success modal (動的に追加)
-const modalStyles = `
-.success-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+function showErrorMessage(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #ff6b9d;
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        z-index: 10000;
+        font-weight: 500;
+        max-width: 300px;
+        animation: slideInRight 0.3s ease-out;
+    `;
+    errorDiv.textContent = message;
+    
+    document.body.appendChild(errorDiv);
+    
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
 }
 
-.success-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
+// Initialize additional features
+document.addEventListener('DOMContentLoaded', function() {
+    initEnhancedEffects();
+    initKeyboardNavigation();
+    initPerformanceMonitoring();
+});
 
-.modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-
-.success-modal.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.modal-header h3 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-
-.modal-header i {
-    color: var(--primary-color);
-    margin-right: 0.5rem;
-}
-
-.modal-body {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.modal-body p {
-    margin-bottom: 1rem;
-    color: var(--text-light);
-}
-
-.modal-body strong a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.modal-body strong a:hover {
-    text-decoration: underline;
-}
-
-.modal-footer {
-    text-align: center;
-}
-
-.error-message {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
-}
-
-.form-group input.error,
-.form-group select.error,
-.form-group textarea.error {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-}
-
-.form-group input.valid,
-.form-group select.valid,
-.form-group textarea.valid {
-    border-color: var(--primary-color);
-}
-`;
-
-// スタイルをページに追加
-const styleSheet = document.createElement('style');
-styleSheet.textContent = modalStyles;
-document.head.appendChild(styleSheet);
+// Make scrollToForm globally available
+window.scrollToForm = scrollToForm;
+window.closeSuccessModal = closeSuccessModal;
