@@ -33,21 +33,29 @@
                     </div>
                 </div>
                 
-                <!-- Desktop Navigation -->
-                <div class="nav-tabs" id="nav-tabs">
-                    <button class="tab-btn active" data-tab="home">
-                        <i class="fas fa-home"></i>
-                        <span>ホーム</span>
-                    </button>
-                    <button class="tab-btn" data-tab="about">
-                        <i class="fas fa-users"></i>
-                        <span>クラブ説明</span>
-                    </button>
-                    <button class="tab-btn" data-tab="lessons">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>レッスン案内</span>
-                    </button>
-                </div>
+                <!-- Desktop Navigation Menu -->
+                <nav class="main-nav" id="main-nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <button class="nav-btn active" data-tab="home">
+                                <i class="fas fa-home"></i>
+                                <span>ホーム</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-btn" data-tab="about">
+                                <i class="fas fa-info-circle"></i>
+                                <span>クラブ説明</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-btn" data-tab="lessons">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>レッスン案内</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
                 
                 <!-- Quick Action Button -->
                 <div class="header-actions">
@@ -69,23 +77,63 @@
         <!-- Mobile Navigation -->
         <div class="mobile-nav" id="mobile-nav">
             <div class="mobile-nav-content">
-                <button class="mobile-tab-btn active" data-tab="home">
-                    <i class="fas fa-home"></i>
-                    <span>ホーム</span>
-                </button>
-                <button class="mobile-tab-btn" data-tab="about">
-                    <i class="fas fa-users"></i>
-                    <span>クラブ説明</span>
-                </button>
-                <button class="mobile-tab-btn" data-tab="lessons">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>レッスン案内</span>
-                </button>
+                <div class="mobile-nav-header">
+                    <h3>メニュー</h3>
+                    <button class="mobile-nav-close" onclick="closeMobileNav()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <ul class="mobile-menu-list">
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn active" data-tab="home">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">ホーム</span>
+                                <span class="mobile-btn-desc">トップページ</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                    
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn" data-tab="about">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">クラブ説明</span>
+                                <span class="mobile-btn-desc">詳細情報・特徴</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                    
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn" data-tab="lessons">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">レッスン案内</span>
+                                <span class="mobile-btn-desc">スケジュール・料金</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                </ul>
+                
                 <div class="mobile-nav-divider"></div>
-                <button class="mobile-apply-btn" onclick="scrollToForm()">
-                    <i class="fas fa-paper-plane"></i>
-                    <span>お申し込み</span>
-                </button>
+                
+                <div class="mobile-cta-section">
+                    <button class="mobile-apply-btn" onclick="scrollToForm()">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>お申し込み</span>
+                        <span class="apply-badge">無料</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>

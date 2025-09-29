@@ -1,8 +1,8 @@
 // Modern Step Up Badminton Club - JavaScript
 
 // DOM Elements
-const tabButtons = document.querySelectorAll('.tab-btn');
-const mobileTabButtons = document.querySelectorAll('.mobile-tab-btn');
+const tabButtons = document.querySelectorAll('.nav-btn');
+const mobileTabButtons = document.querySelectorAll('.mobile-nav-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 const mobileToggle = document.getElementById('mobile-toggle');
 const mobileNav = document.getElementById('mobile-nav');
@@ -635,6 +635,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initPerformanceMonitoring();
 });
 
-// Make scrollToForm globally available
+// Make functions globally available
 window.scrollToForm = scrollToForm;
 window.closeSuccessModal = closeSuccessModal;
+window.closeMobileNav = closeMobileNav;
