@@ -2283,6 +2283,45 @@ section {
     font-size: 0.8rem;
 }
 
+/* Location Notices */
+.location-notices {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.notice-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, 
+        rgba(255, 193, 7, 0.1) 0%, 
+        rgba(255, 235, 149, 0.08) 100%);
+    border-left: 4px solid #ffc107;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.1);
+}
+
+.notice-item:last-child {
+    margin-bottom: 0;
+}
+
+.notice-item i {
+    color: #f57f17;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.notice-item span {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
 /* Schedule Section */
 .schedule-section {
     background: var(--bg-white);
@@ -3051,6 +3090,31 @@ section {
         word-break: break-all;
         line-height: 1.4 !important;
     }
+    
+    /* Mobile location notices */
+    .location-notices {
+        margin-top: 1.2rem !important;
+        padding-top: 0.8rem !important;
+    }
+    
+    .notice-item {
+        padding: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
+        flex-direction: column;
+        gap: 0.5rem !important;
+        text-align: left;
+    }
+    
+    .notice-item i {
+        font-size: 1.1rem !important;
+        align-self: flex-start;
+        margin-bottom: 0.3rem;
+    }
+    
+    .notice-item span {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
 }
 
 
@@ -3293,6 +3357,17 @@ section {
     .mobile-btn-desc {
         font-size: 0.85rem !important;
         line-height: 1.4 !important;
+    }
+    
+    /* Mobile location notices for small screens */
+    .notice-item {
+        padding: 0.7rem !important;
+        gap: 0.4rem !important;
+    }
+    
+    .notice-item span {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
     }
     
     .hero-title {
