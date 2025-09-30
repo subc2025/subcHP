@@ -2989,6 +2989,25 @@ section {
             rgba(248, 250, 255, 0.3) 100%) !important;
         border: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
+    
+    /* Mobile footer centering */
+    .footer-content {
+        text-align: center !important;
+    }
+    
+    .contact-item,
+    .location-item {
+        justify-content: center !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        gap: 0.5rem;
+    }
+    
+    .contact-item i,
+    .location-item i {
+        margin-bottom: 0.5rem;
+    }
 }
 
 
@@ -3114,6 +3133,22 @@ section {
         box-shadow: 
             0 8px 32px rgba(102, 126, 234, 0.15),
             inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    /* Mobile footer centering */
+    .footer-content {
+        text-align: center !important;
+    }
+    
+    .contact-item,
+    .location-item {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .contact-item a,
+    .location-item span {
+        text-align: center !important;
     }
     
     .email-instructions {
