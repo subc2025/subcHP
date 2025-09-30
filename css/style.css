@@ -25,6 +25,31 @@ body {
     min-height: 100vh;
 }
 
+/* Page wrapper to eliminate white gaps */
+.page-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 25%, #e8f4ff 50%, #f0f7ff 75%, #f8fbff 100%);
+    position: relative;
+}
+
+/* Header-to-main transition */
+.header-main-transition {
+    height: 20px;
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.7) 100%);
+    margin: 0;
+}
+
+/* Main-to-footer transition */
+.main-footer-transition {
+    height: 20px;
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.7) 0%, 
+        var(--bg-dark) 100%);
+    margin: 0;
+}
+
 /* ===== EMERGENCY FIX: FORCE DESKTOP HEADER DISPLAY ===== */
 
 /* Override ALL possible CSS conflicts - highest priority */
@@ -191,7 +216,7 @@ body {
 /* Section spacing with colored backgrounds */
 section {
     padding: 3rem 0;
-    margin: 2rem 0;
+    margin: 0;
     position: relative;
 }
 
@@ -949,8 +974,15 @@ section:nth-child(odd)::before {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 20px 20px 0 0;
-    margin: 0 10px;
+    margin: 0;
     box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure main content container fills full width */
+.main-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Tab Content Styles */
