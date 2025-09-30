@@ -163,17 +163,17 @@ body {
     opacity: 1 !important;
 }
 
-/* Hide mobile elements */
+/* Hide mobile elements on desktop */
 .mobile-nav {
-    display: none !important;
+    display: none;
 }
 
 .mobile-toggle {
-    display: none !important;
+    display: none;
 }
 
 .mobile-nav.active {
-    display: none !important;
+    display: block;
 }
 
 .container {
@@ -627,7 +627,7 @@ section:nth-child(odd)::before {
 
 /* Mobile Navigation */
 .mobile-toggle {
-    display: none !important;
+    display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
@@ -2616,7 +2616,7 @@ section {
 
 .mobile-toggle,
 .mobile-nav {
-    display: none !important;
+    display: none;
 }
 
 /* TABLETS ONLY: 768px to 1024px */

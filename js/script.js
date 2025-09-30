@@ -40,15 +40,7 @@ function initTabNavigation() {
         });
     }
 
-    // Quick navigation buttons
-    const quickNavBtns = document.querySelectorAll('.quick-nav-btn');
-    quickNavBtns.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetTab = this.dataset.tab;
-            switchTab(targetTab);
-            updateAllTabButtonStates(targetTab);
-        });
-    });
+
 
     // Mobile tab buttons
     mobileTabButtons.forEach(button => {
@@ -127,12 +119,6 @@ function updateAllTabButtonStates(activeTab) {
     
     // Update mobile buttons
     mobileTabButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.tab === activeTab);
-    });
-    
-    // Update quick nav buttons
-    const quickNavBtns = document.querySelectorAll('.quick-nav-btn');
-    quickNavBtns.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.tab === activeTab);
     });
 }
@@ -389,15 +375,21 @@ function submitForm() {
     // Create email body
     const emailBody = createEmailBody(formDataObject);
     
-    // Simulate form submission
+    // Send email using mailto link
+    const mailtoUrl = `mailto:subc202510@gmail.com?subject=${encodeURIComponent('バドミントンクラブ参加申込')}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
+    
+    // Show success message after a brief delay
     setTimeout(() => {
-        showSuccessMessage(emailBody);
+        showSuccessMessage();
         resetForm();
         
         // Reset button state
         submitButton.innerHTML = originalText;
         submitButton.disabled = false;
-    }, 2000);
+    }, 1500);
 }
 
 function createEmailBody(data) {
@@ -443,19 +435,19 @@ function createEmailBody(data) {
     return body;
 }
 
-function showSuccessMessage(emailBody) {
+function showSuccessMessage() {
     const modal = document.createElement('div');
     modal.className = 'success-modal';
     modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-check-circle"></i> お申し込みありがとうございます！</h3>
+                <h3><i class="fas fa-check-circle"></i> メールアプリを開きました！</h3>
             </div>
             <div class="modal-body">
-                <p>以下の内容でお申し込みを受け付けました。</p>
-                <p>確認のため、以下のメールアドレスにご連絡ください：</p>
-                <p><strong><a href="mailto:subc202510@gmail.com?subject=バドミントン教室参加申込&body=${encodeURIComponent(emailBody)}">subc202510@gmail.com</a></strong></p>
-                <p>※上記リンクをクリックすると、メールアプリが自動的に開きます。</p>
+                <p>お申し込み内容がメールアプリに自動入力されました。</p>
+                <p><strong>送信先：subc202510@gmail.com</strong></p>
+                <p>メールアプリで内容をご確認の上、送信してください。</p>
+                <p>※メールアプリが開かない場合は、直接上記のアドレスにお申し込み内容をお送りください。</p>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" onclick="closeSuccessModal()">
