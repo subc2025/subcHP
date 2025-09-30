@@ -330,16 +330,17 @@ section:nth-child(odd)::before {
 }
 
 .brand-icon {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     background: var(--primary-gradient);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .brand-icon i {
@@ -350,11 +351,12 @@ section:nth-child(odd)::before {
 /* Logo Image Styling */
 .brand-icon.logo-image {
     background: transparent;
-    padding: 4px;
+    padding: 6px;
     animation: none;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    border: 1px solid rgba(102, 126, 234, 0.15);
 }
 
 .club-logo {
@@ -467,28 +469,29 @@ section:nth-child(odd)::before {
 
 .brand-main {
     font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 1.4rem;
+    font-weight: 700;
+    font-size: 1.1rem;
     background: var(--primary-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    line-height: 1;
-    letter-spacing: 0.5px;
+    line-height: 1.2;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .brand-sub {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--primary-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
+    line-height: 1.2;
     margin-top: 2px;
 }
 
@@ -1824,8 +1827,8 @@ section {
 .lesson-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .info-card {
@@ -1846,7 +1849,7 @@ section {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1rem 1.25rem;
     background: var(--bg-light);
     border-bottom: 1px solid var(--border-light);
 }
@@ -1874,7 +1877,7 @@ section {
 }
 
 .card-body {
-    padding: 2rem 1.5rem;
+    padding: 1.25rem;
 }
 
 /* Time Card */
@@ -1974,9 +1977,9 @@ section {
 .schedule-section {
     background: var(--bg-white);
     border-radius: var(--radius-xl);
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: var(--shadow-md);
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .schedule-title {
@@ -1984,10 +1987,10 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .schedule-title i {
@@ -2053,9 +2056,9 @@ section {
 .coach-section {
     background: var(--bg-white);
     border-radius: var(--radius-xl);
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: var(--shadow-md);
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .coach-title {
@@ -2063,10 +2066,10 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .coach-title i {
@@ -2139,7 +2142,7 @@ section {
 
 /* Map Section */
 .map-section {
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .map-title {
@@ -2167,7 +2170,7 @@ section {
 .contact-section {
     background: var(--bg-white);
     border-radius: var(--radius-xl);
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: var(--shadow-md);
 }
 
@@ -2400,14 +2403,17 @@ section {
 
 .footer-brand .brand-icon.logo-image {
     background: white;
-    padding: 4px;
+    padding: 6px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(102, 126, 234, 0.15);
 }
 
 .footer-brand .club-logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: calc(var(--radius-lg) - 4px);
+    border-radius: calc(var(--radius-lg) - 6px);
 }
 
 .footer-info h3 {
