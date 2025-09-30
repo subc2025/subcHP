@@ -36,18 +36,19 @@ function initTabNavigation() {
     if (brandButton) {
         brandButton.addEventListener('click', function() {
             switchTab('home');
-            updateTabButtonStates('home');
+            updateAllTabButtonStates('home');
         });
     }
 
-    // Home back button
-    const homeBackBtn = document.querySelector('.home-back-btn');
-    if (homeBackBtn) {
-        homeBackBtn.addEventListener('click', function() {
-            switchTab('home');
-            updateTabButtonStates('home');
+    // Quick navigation buttons
+    const quickNavBtns = document.querySelectorAll('.quick-nav-btn');
+    quickNavBtns.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            switchTab(targetTab);
+            updateAllTabButtonStates(targetTab);
         });
-    }
+    });
 
     // Mobile tab buttons
     mobileTabButtons.forEach(button => {
@@ -59,13 +60,8 @@ function initTabNavigation() {
             mobileTabButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
-            // Update desktop button states
-            tabButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.tab === targetTab) {
-                    btn.classList.add('active');
-                }
-            });
+            // Update all button states
+            updateAllTabButtonStates(targetTab);
             
             // Close mobile menu
             closeMobileNav();
@@ -119,6 +115,24 @@ function updateTabButtonStates(activeTab) {
     
     // Update mobile buttons
     mobileTabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === activeTab);
+    });
+}
+
+function updateAllTabButtonStates(activeTab) {
+    // Update main nav buttons
+    tabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === activeTab);
+    });
+    
+    // Update mobile buttons
+    mobileTabButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === activeTab);
+    });
+    
+    // Update quick nav buttons
+    const quickNavBtns = document.querySelectorAll('.quick-nav-btn');
+    quickNavBtns.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.tab === activeTab);
     });
 }
