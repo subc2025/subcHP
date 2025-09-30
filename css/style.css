@@ -305,7 +305,7 @@ section:nth-child(odd)::before {
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     text-decoration: none;
     border: none;
     background: transparent;
@@ -330,8 +330,8 @@ section:nth-child(odd)::before {
 }
 
 .brand-icon {
-    width: 70px;
-    height: 70px;
+    width: 105px;
+    height: 105px;
     background: var(--primary-gradient);
     border-radius: var(--radius-lg);
     display: flex;
@@ -351,7 +351,7 @@ section:nth-child(odd)::before {
 /* Logo Image Styling */
 .brand-icon.logo-image {
     background: transparent;
-    padding: 6px;
+    padding: 9px;
     animation: none;
     box-shadow: var(--shadow-sm);
     border-radius: var(--radius-lg);
@@ -470,13 +470,13 @@ section:nth-child(odd)::before {
 .brand-main {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.65rem;
     background: var(--primary-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     line-height: 1.2;
-    letter-spacing: 0.8px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -484,15 +484,15 @@ section:nth-child(odd)::before {
 .brand-sub {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.65rem;
     background: var(--primary-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    letter-spacing: 0.8px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     line-height: 1.2;
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 /* Main Navigation */
@@ -2407,9 +2407,9 @@ section {
 
 .footer-brand .brand-icon.logo-image {
     background: white;
-    padding: 6px;
-    width: 70px;
-    height: 70px;
+    padding: 9px;
+    width: 105px;
+    height: 105px;
     border: 1px solid rgba(102, 126, 234, 0.15);
 }
 
