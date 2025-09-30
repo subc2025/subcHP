@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=15">
 </head>
 <body>
     <!-- Header -->
@@ -24,12 +24,12 @@
         <nav class="navbar">
             <div class="container">
                 <button class="nav-brand" data-tab="home">
-                    <div class="brand-icon">
-                        <i class="fas fa-shuttle-van"></i>
+                    <div class="brand-icon logo-image">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/d821544f6e0a10f3dcaa3c02561be0a4" alt="ステップアップバドミントンクラブ ロゴ" class="club-logo">
                     </div>
                     <div class="brand-text">
-                        <span class="brand-main">STEP UP</span>
-                        <span class="brand-sub">BADMINTON CLUB</span>
+                        <span class="brand-main">BADMINTON</span>
+                        <span class="brand-sub">STEP UP CLUB</span>
                     </div>
                 </button>
                 
@@ -57,23 +57,7 @@
                     </ul>
                 </nav>
                 
-                <!-- Header Actions -->
-                <div class="header-actions">
-                    <nav class="quick-nav">
-                        <button class="quick-nav-btn active" data-tab="home" title="ホーム">
-                            <i class="fas fa-home"></i>
-                            <span>ホーム</span>
-                        </button>
-                        <button class="quick-nav-btn" data-tab="about" title="クラブ紹介">
-                            <i class="fas fa-info-circle"></i>
-                            <span>クラブ紹介</span>
-                        </button>
-                        <button class="quick-nav-btn" data-tab="lessons" title="レッスン案内">
-                            <i class="fas fa-calendar-check"></i>
-                            <span>レッスン案内</span>
-                        </button>
-                    </nav>
-                </div>
+
                 
                 <!-- Mobile Toggle -->
                 <div class="mobile-toggle" id="mobile-toggle">
@@ -221,123 +205,98 @@
         </section>
 
         <!-- About Tab -->
-        <section id="about" class="tab-content">
+        <section id="about" class="tab-content compact-layout">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header compact">
                     <div class="section-badge">
                         <i class="fas fa-heart"></i>
                         <span>About Us</span>
                     </div>
-                    <h2 class="section-title">クラブについて</h2>
+                    <h2 class="section-title">🏸 クラブについて</h2>
                     <p class="section-subtitle">一人ひとりのペースに合わせた指導で、確実にレベルアップ</p>
                 </div>
                 
-                <div class="about-hero">
-                    <div class="about-visual">
-                        <div class="activity-illustration">
-                            <img src="images/activity-illustration.jpg" alt="バドミントンを楽しむ様子" class="activity-image">
-                        </div>
-                        <div class="stats-overlay">
-                            <div class="stat-item">
-                                <div class="stat-number">100+</div>
-                                <div class="stat-label">参加者実績</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">4</div>
-                                <div class="stat-label">開催回数/年</div>
+                <!-- Compact Main Content -->
+                <div class="about-main-grid">
+                    <!-- Left: Illustration + Stats -->
+                    <div class="about-visual compact">
+                        <div class="activity-illustration compact">
+                            <img src="images/activity-illustration-new.jpg" alt="バドミントンを楽しむカラフルなイラスト" class="activity-image">
+                            <div class="stats-mini">
+                                <div class="mini-stat">
+                                    <span class="number">100+</span>
+                                    <span class="label">参加者</span>
+                                </div>
+                                <div class="mini-stat">
+                                    <span class="number">4回</span>
+                                    <span class="label">年開催</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="about-content">
-                        <div class="catch-copy">
-                            <h3 class="catch-title">楽しく学んで、確実に上達</h3>
-                            <p class="catch-description">
-                                「バドミントンを始めたいけど、どこから始めればいいかわからない...」<br>
-                                そんなあなたのための教室です
+                    <!-- Right: Content -->
+                    <div class="about-content compact">
+                        <div class="mission-brief">
+                            <h3 class="compact-title">楽しく学んで、確実に上達！</h3>
+                            <p class="compact-text">
+                                <strong>初心者・初級者・久しぶりにバドミントンを再開する方</strong>を対象に、
+                                基礎から丁寧に楽しく指導します。
                             </p>
                         </div>
                         
-                        <div class="about-text">
-                            <p class="intro-text">
-                                ステップアップバドミントンクラブは、<strong>初心者・初級者・久しぶりにバドミントンを再開する方</strong>を対象に、
-                                バドミントンの基礎的な打ち方、動き方などのレッスンを行います。
-                            </p>
-                        </div>
-                        
-                        <div class="target-audience">
-                            <h4 class="audience-title">
-                                <i class="fas fa-bullseye"></i>
-                                こんな方におすすめです
-                            </h4>
-                            <div class="audience-list">
-                                <div class="audience-item">
-                                    <div class="item-icon">
-                                        <i class="fas fa-user-graduate"></i>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>技術レベルを気にせず参加したい</h5>
-                                        <p>バドミントンをしたいけど、技術的なレベルが低いため、サークルに参加しづらい</p>
-                                    </div>
+                        <!-- Compact Target Cards -->
+                        <div class="target-compact">
+                            <h4 class="compact-subtitle">🎯 こんな方にぴったり</h4>
+                            <div class="target-mini-grid">
+                                <div class="mini-card">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>初心者大歓迎</span>
                                 </div>
-                                
-                                <div class="audience-item">
-                                    <div class="item-icon">
-                                        <i class="fas fa-medal"></i>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>技術向上と試合参加を目指したい</h5>
-                                        <p>バドミントンの技術を上げて、試合に参加してみたい</p>
-                                    </div>
+                                <div class="mini-card">
+                                    <i class="fas fa-medal"></i>
+                                    <span>技術向上志向</span>
                                 </div>
-                                
-                                <div class="audience-item">
-                                    <div class="item-icon">
-                                        <i class="fas fa-heartbeat"></i>
-                                    </div>
-                                    <div class="item-content">
-                                        <h5>健康促進・ダイエット効果を期待</h5>
-                                        <p>バドミントンを通じて、健康促進・ダイエットを実行したい</p>
-                                    </div>
+                                <div class="mini-card">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span>健康促進</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="features-section">
-                    <h3 class="features-title">
-                        <i class="fas fa-sparkles"></i>
-                        クラブの特徴
-                    </h3>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="card-icon">
+                <!-- Compact Features -->
+                <div class="features-compact">
+                    <h3 class="compact-features-title">✨ クラブの3つの魅力</h3>
+                    <div class="features-horizontal">
+                        <div class="feature-mini">
+                            <div class="mini-icon users">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <div class="card-content">
-                                <h4>初心者歓迎</h4>
-                                <p>基礎から丁寧に指導します。レベルを気にせず安心してご参加ください。</p>
+                            <div class="mini-content">
+                                <h4>🤝 初心者安心</h4>
+                                <p>レベル不問で基礎から指導</p>
                             </div>
                         </div>
                         
-                        <div class="feature-card">
-                            <div class="card-icon">
+                        <div class="feature-mini">
+                            <div class="mini-icon fun">
                                 <i class="fas fa-heart"></i>
                             </div>
-                            <div class="card-content">
-                                <h4>楽しい雰囲気</h4>
-                                <p>和気あいあいとした環境で、バドミントンを心から楽しめます。</p>
+                            <div class="mini-content">
+                                <h4>😊 楽しい雰囲気</h4>
+                                <p>和気あいあいとした環境</p>
                             </div>
                         </div>
                         
-                        <div class="feature-card">
-                            <div class="card-icon">
+                        <div class="feature-mini">
+                            <div class="mini-icon growth">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <div class="card-content">
-                                <h4>確実な上達</h4>
-                                <p>一人ひとりのレベルに合わせた指導で、着実なスキルアップを実現。</p>
+                            <div class="mini-content">
+                                <h4>📈 着実な上達</h4>
+                                <p>個別指導で確実にスキルアップ</p>
                             </div>
                         </div>
                     </div>
@@ -405,8 +364,8 @@
                             <div class="location-info">
                                 <h4>横浜市立大岡小学校</h4>
                                 <div class="address">
-                                    〒232-0061<br>
-                                    神奈川県横浜市南区大岡1丁目14-1
+                                    〒232-0054<br>
+                                    神奈川県横浜市南区大橋町3−49
                                 </div>
                                 <div class="access-info">
                                     <h5><i class="fas fa-train"></i> アクセス</h5>
@@ -502,7 +461,7 @@
                     </h3>
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.2!2d139.6089!3d35.4403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDI2JzI1LjEiTiAxMznCsDM2JzMyLjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890!5m2!1sja!2sjp"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.3!2d139.6072!3d35.4389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185ce6e24f3fff%3A0x123456789!2z5pel5pys44CBMjMyLTAwNTQg56We5aWI5bed55yM5qiq5rWc5biC5Y2X5Yy65aSn5qmL55S677yT5LiB55uu77yU77yZ!5e0!3m2!1sja!2sjp!4v1234567890!5m2!1sja!2sjp"
                             width="100%" 
                             height="300" 
                             style="border:0;" 
@@ -620,8 +579,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="brand-icon">
-                        <i class="fas fa-shuttle-van"></i>
+                    <div class="brand-icon logo-image">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/d821544f6e0a10f3dcaa3c02561be0a4" alt="ステップアップバドミントンクラブ ロゴ" class="club-logo">
                     </div>
                     <div class="footer-info">
                         <h3>ステップアップバドミントンクラブ</h3>
@@ -653,6 +612,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=12"></script>
 </body>
 </html>
