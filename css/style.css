@@ -1215,6 +1215,32 @@ section {
     margin-bottom: 4rem;
 }
 
+/* Lessons Header with Illustration */
+.lessons-header .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lessons-header .header-text {
+    flex: 1;
+    text-align: left;
+}
+
+.lessons-header .header-illustration {
+    flex-shrink: 0;
+}
+
+.lesson-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
 .section-badge {
     display: inline-flex;
     align-items: center;
@@ -2682,6 +2708,22 @@ section {
     .coach-section,
     .contact-section {
         padding: 2rem;
+    }
+    
+    /* Mobile lessons header */
+    .lessons-header .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .lessons-header .header-text {
+        text-align: center;
+    }
+    
+    .lesson-logo {
+        width: 100px;
+        height: 100px;
     }
 }
 
