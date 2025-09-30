@@ -2915,6 +2915,30 @@ section {
         gap: 2rem;
     }
     
+    /* Contact title mobile optimization */
+    .contact-title {
+        font-size: 1.4rem !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+    }
+    
+    .contact-title-text {
+        font-size: 1.4rem !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Contact info mobile optimization */
+    .email-instructions {
+        margin-top: 0.8rem !important;
+        padding: 1rem !important;
+    }
+    
+    .instruction-text p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
