@@ -81,10 +81,15 @@ body {
 
 /* Force text to show on desktop */
 .nav-btn span,
-.brand-text,
+.brand-text {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Brand text elements should follow their container's flex layout */
 .brand-main,
 .brand-sub {
-    display: inline !important;
     visibility: visible !important;
     opacity: 1 !important;
 }
@@ -460,7 +465,7 @@ section:nth-child(odd)::before {
 }
 
 .brand-text {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -468,6 +473,7 @@ section:nth-child(odd)::before {
 }
 
 .brand-main {
+    display: block;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.65rem;
@@ -482,6 +488,7 @@ section:nth-child(odd)::before {
 }
 
 .brand-sub {
+    display: block;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.65rem;
