@@ -17,7 +17,7 @@ body {
     line-height: 1.6;
     color: #2c3e50;
     overflow-x: hidden;
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 25%, #90caf9 50%, #bbdefb 75%, #e3f2fd 100%);
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 25%, #e8f4ff 50%, #f0f7ff 75%, #f8fbff 100%);
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -198,25 +198,25 @@ section::before {
     right: -20px;
     bottom: -1rem;
     background: linear-gradient(135deg, 
-        rgba(102, 126, 234, 0.08) 0%, 
-        rgba(118, 75, 162, 0.08) 50%, 
-        rgba(102, 126, 234, 0.08) 100%);
+        rgba(102, 126, 234, 0.03) 0%, 
+        rgba(118, 75, 162, 0.03) 50%, 
+        rgba(102, 126, 234, 0.03) 100%);
     border-radius: 20px;
     z-index: -1;
 }
 
 section:nth-child(even)::before {
     background: linear-gradient(135deg, 
-        rgba(255, 106, 157, 0.08) 0%, 
-        rgba(254, 207, 239, 0.08) 50%, 
-        rgba(255, 106, 157, 0.08) 100%);
+        rgba(255, 106, 157, 0.03) 0%, 
+        rgba(254, 207, 239, 0.03) 50%, 
+        rgba(255, 106, 157, 0.03) 100%);
 }
 
 section:nth-child(odd)::before {
     background: linear-gradient(135deg, 
-        rgba(168, 237, 234, 0.08) 0%, 
-        rgba(254, 214, 227, 0.08) 50%, 
-        rgba(168, 237, 234, 0.08) 100%);
+        rgba(168, 237, 234, 0.03) 0%, 
+        rgba(254, 214, 227, 0.03) 50%, 
+        rgba(168, 237, 234, 0.03) 100%);
 }
 
 /* Modern Color Palette */
@@ -958,7 +958,7 @@ section:nth-child(odd)::before {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff9a9e 100%);
-    opacity: 0.15;
+    opacity: 0.06;
 }
 
 .pattern-overlay {
@@ -968,10 +968,10 @@ section:nth-child(odd)::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 154, 158, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 60% 70%, rgba(168, 237, 234, 0.2) 0%, transparent 40%);
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 154, 158, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 60% 70%, rgba(168, 237, 234, 0.08) 0%, transparent 40%);
 }
 
 .hero-content {
@@ -1031,7 +1031,7 @@ section:nth-child(odd)::before {
 .title-sub {
     display: block;
     color: var(--text-secondary);
-    font-size: 0.6em;
+    font-size: 0.85em;
     font-weight: 600;
 }
 
