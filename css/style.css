@@ -2911,8 +2911,21 @@ section {
     }
     
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Contact info mobile positioning - left side */
+    .contact-info {
+        order: 1 !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    /* Form container mobile positioning - right side */
+    .form-container {
+        order: 2 !important;
+        padding-left: 0.5rem !important;
     }
     
     /* Contact title mobile optimization */
@@ -2930,13 +2943,22 @@ section {
     /* Contact info mobile optimization */
     .email-instructions {
         margin-top: 0.8rem !important;
-        padding: 1rem !important;
+        padding: 0.8rem !important;
     }
     
     .instruction-text p {
-        font-size: 0.85rem !important;
-        line-height: 1.5 !important;
-        margin-bottom: 0.5rem !important;
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    /* Mobile form optimization */
+    .form-container {
+        padding: 1.5rem !important;
+    }
+    
+    .contact-form {
+        gap: 1.2rem !important;
     }
     
     .footer-content {
