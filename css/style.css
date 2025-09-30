@@ -25,30 +25,9 @@ body {
     min-height: 100vh;
 }
 
-/* Page wrapper to eliminate white gaps */
-.page-wrapper {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 25%, #e8f4ff 50%, #f0f7ff 75%, #f8fbff 100%);
-    position: relative;
-}
 
-/* Header-to-main transition */
-.header-main-transition {
-    height: 20px;
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        rgba(255, 255, 255, 0.7) 100%);
-    margin: 0;
-}
 
-/* Main-to-footer transition */
-.main-footer-transition {
-    height: 20px;
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.7) 0%, 
-        var(--bg-dark) 100%);
-    margin: 0;
-}
+
 
 /* ===== EMERGENCY FIX: FORCE DESKTOP HEADER DISPLAY ===== */
 
@@ -1010,13 +989,14 @@ section:nth-child(odd)::before {
 
 /* Main Content */
 .main-content {
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
     position: relative;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 20px 20px 0 0;
     margin: 0;
     box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.1);
+    padding-bottom: 0;
 }
 
 /* Ensure main content container fills full width */
@@ -1024,6 +1004,19 @@ section:nth-child(odd)::before {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Extend background to fill any vertical gaps */
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: -1;
 }
 
 /* Tab Content Styles */
@@ -2623,6 +2616,9 @@ section {
     background: var(--bg-dark);
     color: white;
     padding: 3rem 0 1rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
