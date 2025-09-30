@@ -2363,6 +2363,44 @@ section {
     text-decoration: underline;
 }
 
+/* Email Instructions Styles */
+.email-instructions {
+    margin-top: 1rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(168, 237, 234, 0.05) 100%);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.instruction-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.instruction-content i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.instruction-text p {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.instruction-text p:last-child {
+    margin-bottom: 0;
+}
+
+.instruction-text p strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 /* Form Styles */
 .form-container {
     background: var(--bg-light);
@@ -2768,6 +2806,24 @@ section {
     
     .brand-text {
         display: none;
+    }
+    
+    .email-instructions {
+        padding: 1rem;
+        margin-top: 0.8rem;
+    }
+    
+    .instruction-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .instruction-content i {
+        align-self: flex-start;
+    }
+    
+    .instruction-text p {
+        font-size: 0.85rem;
     }
     
     .hero-title {
