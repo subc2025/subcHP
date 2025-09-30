@@ -2060,7 +2060,7 @@ section {
 .coach-section {
     background: var(--bg-white);
     border-radius: var(--radius-xl);
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: var(--shadow-md);
     margin-bottom: 2.5rem;
 }
@@ -2082,27 +2082,34 @@ section {
 
 .coach-card {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .coach-visual {
     flex-shrink: 0;
 }
 
+.coach-info {
+    flex: 1;
+    min-width: 0;
+}
+
 .coach-avatar {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: var(--secondary-gradient);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-md);
+    flex-shrink: 0;
 }
 
 .coach-avatar i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
 }
 
@@ -2114,9 +2121,10 @@ section {
 }
 
 .coach-count {
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .level-badge {
@@ -2140,9 +2148,14 @@ section {
 }
 
 .coach-note {
-    color: var(--text-secondary);
-    line-height: 1.5;
-    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 1rem;
+    background: var(--bg-light);
+    padding: 1.2rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--secondary-color);
+    margin-top: 0.5rem;
 }
 
 /* Map Section */
@@ -2623,6 +2636,16 @@ section {
     .coach-card {
         flex-direction: column;
         text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .coach-info {
+        text-align: left;
+    }
+    
+    .coach-note {
+        font-size: 0.95rem;
+        padding: 1rem;
     }
     
     .stats-overlay {
