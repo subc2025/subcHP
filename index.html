@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=28">
+    <link rel="stylesheet" href="css/style.css?v=29">
 </head>
 <body>
     <!-- Header -->
@@ -52,6 +52,12 @@
                             <button class="nav-btn" data-tab="lessons">
                                 <i class="fas fa-calendar-check"></i>
                                 <span>レッスン案内</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-btn" data-tab="application">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>参加申し込み</span>
                             </button>
                         </li>
                     </ul>
@@ -113,6 +119,19 @@
                             <div class="mobile-btn-content">
                                 <span class="mobile-btn-title">レッスン案内</span>
                                 <span class="mobile-btn-desc">スケジュール・料金</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                    
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn" data-tab="application">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">参加申し込み</span>
+                                <span class="mobile-btn-desc">お申し込みフォーム</span>
                             </div>
                             <i class="fas fa-chevron-right mobile-btn-arrow"></i>
                         </button>
@@ -466,6 +485,120 @@
                             loading="lazy">
                         </iframe>
                     </div>
+                </div>
+                
+                <!-- Contact Form Section -->
+                <div class="contact-section" id="contact-form">
+                    <h3 class="contact-title">
+                        <i class="fas fa-paper-plane"></i>
+                        お申し込み・お問い合わせ
+                    </h3>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-text">
+                                    <h4>メールでのお問い合わせ</h4>
+                                    <a href="mailto:subc202510@gmail.com">subc202510@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-container">
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">お名前 <span class="required">*</span></label>
+                                        <input type="text" id="name" name="name" required placeholder="山田 太郎">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">メールアドレス <span class="required">*</span></label>
+                                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">電話番号</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="090-1234-5678">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="experience">バドミントン経験</label>
+                                        <select id="experience" name="experience">
+                                            <option value="">選択してください</option>
+                                            <option value="beginner">初心者（ほとんど経験なし）</option>
+                                            <option value="elementary">初級者（少し経験あり）</option>
+                                            <option value="returning">経験者（ブランクあり）</option>
+                                            <option value="intermediate">中級者</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>参加希望回</label>
+                                    <div class="checkbox-grid">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-10-25">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第1回（10月25日）</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-11-29">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第2回（11月29日）</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-12-20">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第3回（12月20日）</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-01-25">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第4回（1月25日）</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="checkbox-item practice-option">
+                                        <input type="checkbox" id="practice" name="practice" value="yes">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">プラクティス（試合形式練習）にも参加希望（+300円）</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">メッセージ・質問等</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="ご質問やご要望があればお聞かせください"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                    お申し込み
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Tab -->
+        <section id="application" class="tab-content">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Application</span>
+                    </div>
+                    <h2 class="section-title">参加申し込み</h2>
+                    <p class="section-subtitle">お気軽にお申し込み・お問い合わせください</p>
                 </div>
                 
                 <!-- Contact Form Section -->

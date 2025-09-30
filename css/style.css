@@ -575,6 +575,56 @@ section:nth-child(odd)::before {
     font-size: 1.1rem;
 }
 
+/* Apply Button Styles */
+.nav-btn.apply-btn {
+    background: var(--secondary-gradient);
+    color: white;
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.nav-btn.apply-btn::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.nav-btn.apply-btn:hover {
+    background: var(--secondary-gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn.apply-btn:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mobile Apply Button in Navigation */
+.mobile-apply-nav-btn {
+    background: linear-gradient(135deg, rgba(255, 154, 158, 0.1) 0%, rgba(254, 207, 239, 0.1) 100%);
+    border: 2px solid transparent;
+}
+
+.mobile-apply-nav-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 154, 158, 0.2) 0%, rgba(254, 207, 239, 0.2) 100%);
+    border-color: var(--secondary-color);
+}
+
+.mobile-apply-nav-btn .mobile-btn-icon {
+    background: var(--secondary-gradient);
+}
+
+.mobile-apply-nav-btn .mobile-btn-title {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.mobile-apply-nav-btn .mobile-btn-arrow {
+    color: var(--secondary-color);
+}
+
 /* Header Actions */
 .header-actions {
     display: flex;
