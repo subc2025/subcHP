@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ステップアップバドミントンクラブ | 横浜市で初心者向けバドミントン教室</title>
+    <meta name="description" content="横浜市で初心者・初級者向けのバドミントン教室。月1回のレッスンで基礎から楽しく学べます。健康促進・ダイエット効果も期待できます。">
+    <meta name="keywords" content="バドミントン,教室,横浜,初心者,レッスン,スポーツ">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=40">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <button class="nav-brand" data-tab="home">
+                    <div class="brand-icon logo-image">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/a7519c6464d25ffddf88edf708f9f492" alt="ステップアップバドミントンクラブ ロゴ" class="club-logo">
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-main">STEP UP <span class="step-up-arrow">⤴️</span></span>
+                        <span class="brand-sub">BADMINTON CLUB</span>
+                    </div>
+                </button>
+                
+                <!-- Desktop Navigation Menu -->
+                <nav class="main-nav" id="main-nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <button class="nav-btn active" data-tab="home">
+                                <i class="fas fa-home"></i>
+                                <span>ホーム</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-btn" data-tab="about">
+                                <i class="fas fa-info-circle"></i>
+                                <span>クラブ説明</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-btn" data-tab="lessons">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>レッスン案内</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-btn" data-tab="application">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>参加申し込み</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                
+
+                
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <h3>メニュー</h3>
+                    <button class="mobile-nav-close" onclick="closeMobileNav()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <ul class="mobile-menu-list">
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn active" data-tab="home">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">ホーム</span>
+                                <span class="mobile-btn-desc">トップページ</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                    
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn" data-tab="about">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">クラブ説明</span>
+                                <span class="mobile-btn-desc">詳細情報・特徴</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                    
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn" data-tab="lessons">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">レッスン案内</span>
+                                <span class="mobile-btn-desc">スケジュール・料金</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                    
+                    <li class="mobile-menu-item">
+                        <button class="mobile-nav-btn" data-tab="application">
+                            <div class="mobile-btn-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="mobile-btn-content">
+                                <span class="mobile-btn-title">参加申し込み</span>
+                                <span class="mobile-btn-desc">お申し込みフォーム</span>
+                            </div>
+                            <i class="fas fa-chevron-right mobile-btn-arrow"></i>
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="mobile-nav-divider"></div>
+                
+                <div class="mobile-cta-section">
+                    <button class="mobile-apply-btn" data-tab="application">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>お申し込み</span>
+                        <span class="apply-badge">無料</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Tab -->
+        <section id="home" class="tab-content active">
+            <div class="hero-section">
+                <div class="hero-background">
+                    <div class="gradient-overlay"></div>
+                    <div class="pattern-overlay"></div>
+                </div>
+                
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <div class="hero-badge">
+                                <i class="fas fa-star"></i>
+                                <span>初心者大歓迎</span>
+                            </div>
+                            <h1 class="hero-title">
+                                <span class="title-main">一歩ずつ、確実に</span>
+                                <span class="title-accent">ステップアップ</span>
+                                <span class="title-sub">バドミントンクラブ</span>
+                            </h1>
+                            <p class="hero-description">
+                                横浜で始める、楽しいバドミントンライフ<br>
+                                <strong>基礎から丁寧に指導</strong>し、<br>あなたの成長をサポートします
+                            </p>
+                            
+                            <div class="hero-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>月1回 土曜開催</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-yen-sign"></i>
+                                    <span>参加費 600円</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>横浜市立大岡小学校</span>
+                                </div>
+                            </div>
+                            
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary" data-tab="lessons">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    レッスン案内を見る
+                                </button>
+                                <button class="btn btn-secondary" data-tab="application">
+                                    <i class="fas fa-paper-plane"></i>
+                                    今すぐ申し込む
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-image">
+                            <div class="image-container">
+                                <img src="images/group-illustration.jpg" alt="ステップアップバドミントンクラブのメンバー" class="main-illustration">
+                                <div class="floating-elements">
+                                    <div class="floating-element" style="top: 15%; right: 10%;">
+                                        <i class="fas fa-feather-alt"></i>
+                                    </div>
+                                    <div class="floating-element" style="bottom: 20%; left: 15%;">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Tab -->
+        <section id="about" class="tab-content compact-layout">
+            <div class="container">
+                <div class="section-header compact">
+                    <div class="section-badge">
+                        <i class="fas fa-heart"></i>
+                        <span>About Us</span>
+                    </div>
+                    <h2 class="section-title">🏸 クラブについて</h2>
+                    <p class="section-subtitle">一人ひとりのペースに合わせた指導で、<br>確実にレベルアップ</p>
+                </div>
+                
+                <!-- Compact Main Content -->
+                <div class="about-main-grid">
+                    <!-- Left: Illustration + Stats -->
+                    <div class="about-visual compact">
+                        <div class="activity-illustration compact">
+                            <img src="images/activity-illustration-new.jpg" alt="バドミントンを楽しむカラフルなイラスト" class="activity-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Content -->
+                    <div class="about-content compact">
+                        <div class="mission-brief">
+                            <h3 class="compact-title">楽しく学んで確実に上達！</h3>
+                            <p class="compact-text">
+                                <strong>初心者・初級者・久しぶりにバドミントンを再開する方</strong>を対象に、<br class="pc-only-br">
+                                基礎から丁寧に指導します。
+                            </p>
+                        </div>
+                        
+                        <!-- Compact Target Cards -->
+                        <div class="target-compact">
+                            <h4 class="compact-subtitle">🎯 こんな方にぴったり</h4>
+                            <div class="target-mini-grid">
+                                <div class="mini-card">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>初心者大歓迎</span>
+                                </div>
+                                <div class="mini-card">
+                                    <i class="fas fa-medal"></i>
+                                    <span>技術向上志向</span>
+                                </div>
+                                <div class="mini-card">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span>健康促進</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compact Features -->
+                <div class="features-compact">
+                    <h3 class="compact-features-title">✨ クラブの3つの魅力</h3>
+                    <div class="features-horizontal">
+                        <div class="feature-mini">
+                            <div class="mini-icon users">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="mini-content">
+                                <h4>🤝 初心者安心</h4>
+                                <p>レベル不問で基礎から指導</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-mini">
+                            <div class="mini-icon fun">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="mini-content">
+                                <h4>😊 楽しい雰囲気</h4>
+                                <p>和気あいあいとした環境</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-mini">
+                            <div class="mini-icon growth">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="mini-content">
+                                <h4>📈 着実な上達</h4>
+                                <p>個別指導で確実にスキルアップ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Tab -->
+        <section id="lessons" class="tab-content">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Lesson Info</span>
+                    </div>
+                    <h2 class="section-title">レッスン案内</h2>
+                    <p class="section-subtitle">月1回、土曜日の夜に開催。<br>初心者にやさしいレッスン</p>
+                </div>
+                
+                <!-- Hero Illustration Section -->
+                <div class="lesson-hero-illustration">
+                    <div class="illustration-container">
+                        <img src="https://page.gensparksite.com/v1/base64_upload/71c5e91a2f16f3d9b6138b042b22e49b" alt="バドミントンを楽しむ3人のイラスト" class="hero-illustration">
+                        <div class="illustration-overlay">
+                            <div class="overlay-content">
+                                <h3>一緒にバドミントンを楽しみましょう！</h3>
+                                <p>基礎から丁寧に指導します</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lesson Info Cards -->
+                <div class="lesson-info-grid">
+                    <div class="info-card time-card">
+                        <div class="card-header">
+                            <div class="header-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>開催時間</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="time-info">
+                                <div class="frequency">毎月1回 土曜日</div>
+                                <div class="duration">18:00〜20:00</div>
+                                <div class="note">※スケジュールは下記をご確認ください</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card price-card">
+                        <div class="card-header">
+                            <div class="header-icon">
+                                <i class="fas fa-yen-sign"></i>
+                            </div>
+                            <h3>参加費</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-info">
+                                <div class="main-price">600円</div>
+                                <div class="optional-service">
+                                    <div class="service-name">+ プラクティス</div>
+                                    <div class="service-price">+300円</div>
+                                    <div class="service-desc">レッスン後約1時間の試合形式練習</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card location-card">
+                        <div class="card-header">
+                            <div class="header-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>開催場所</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="location-info">
+                                <h4>横浜市立大岡小学校</h4>
+                                <div class="address">
+                                    〒232-0054<br>
+                                    神奈川県横浜市南区大橋町3−49
+                                </div>
+                                <div class="access-info">
+                                    <h5><i class="fas fa-train"></i> アクセス</h5>
+                                    <ul class="access-list">
+                                        <li><i class="fas fa-circle"></i> 京急本線「弘明寺駅」徒歩8分</li>
+                                        <li><i class="fas fa-circle"></i> 横浜市営地下鉄「弘明寺駅」徒歩10分</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="location-notices">
+                                    <div class="notice-item">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span>大岡川側の校門から入ってください。校門入って左側に体育館があります</span>
+                                    </div>
+                                    <div class="notice-item">
+                                        <i class="fas fa-car"></i>
+                                        <span>車でお越しの方はメールにて連絡ください。駐車したい方が多い場合、近くのコインパーキングを使ってもらうことがあります。バイク・自転車は停められます</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Schedule Section -->
+                <div class="schedule-section">
+                    <h3 class="schedule-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        開催スケジュール
+                    </h3>
+                    <div class="schedule-grid">
+                        <div class="schedule-card">
+                            <div class="schedule-number">01</div>
+                            <div class="schedule-content">
+                                <h4>第1回</h4>
+                                <div class="schedule-date">2025年10月25日（土）</div>
+                                <div class="schedule-time">18:00〜20:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-card">
+                            <div class="schedule-number">02</div>
+                            <div class="schedule-content">
+                                <h4>第2回</h4>
+                                <div class="schedule-date">2025年11月29日（土）</div>
+                                <div class="schedule-time">18:00〜20:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-card">
+                            <div class="schedule-number">03</div>
+                            <div class="schedule-content">
+                                <h4>第3回</h4>
+                                <div class="schedule-date">2025年12月20日（土）</div>
+                                <div class="schedule-time">18:00〜20:00</div>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-card">
+                            <div class="schedule-number">04</div>
+                            <div class="schedule-content">
+                                <h4>第4回</h4>
+                                <div class="schedule-date">2025年1月25日（土）</div>
+                                <div class="schedule-time">18:00〜20:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coach Info -->
+                <div class="coach-section">
+                    <h3 class="coach-title">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        コーチについて
+                    </h3>
+                    <div class="coach-card">
+                        <div class="coach-visual">
+                            <div class="coach-avatar">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="coach-info">
+                            <p class="coach-count">2〜5名のコーチが指導します</p>
+                            <p class="coach-note">
+                                ※プロではありませんので、高度な技術や戦術を教えることができません。<br>
+                                コーチは区民大会B・Cクラス優勝レベル程度なので、基礎的な技術や動き方、戦術を教えることになります。<br>
+                                中級者・上級者の方も参加できますが、物足りなく感じるかもしれません。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h3 class="map-title">
+                        <i class="fas fa-map"></i>
+                        アクセスマップ
+                    </h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.3!2d139.6072!3d35.4389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185ce6e24f3fff%3A0x123456789!2z5pel5pys44CBMjMyLTAwNTQg56We5aWI5bed55yM5qiq5rWc5biC5Y2X5Yy65aSn5qmL55S677yT5LiB55uu77yU77yZ!5e0!3m2!1sja!2sjp!4v1234567890!5m2!1sja!2sjp"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Tab -->
+        <section id="application" class="tab-content">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Application</span>
+                    </div>
+                    <h2 class="section-title">参加申し込み</h2>
+                    <p class="section-subtitle">お気軽にお申し込み・<br>お問い合わせください</p>
+                </div>
+                
+                <!-- Contact Form Section -->
+                <div class="contact-section" id="contact-form">
+                    <h3 class="contact-title">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="contact-title-text">お申し込み・お問い合わせ</span>
+                    </h3>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-text">
+                                    <h4>メールでのお問い合わせ</h4>
+                                    <a href="mailto:subc202510@gmail.com">subc202510@gmail.com</a>
+                                    
+                                    <div class="email-instructions">
+                                        <div class="instruction-content">
+                                            <i class="fas fa-info-circle"></i>
+                                            <div class="instruction-text">
+                                                <p><strong>お申し込み方法：</strong></p>
+                                                <p>フォーマットに入力して、申し込みを押すと、メールフォーマットが自動作成されますので、送信してください。</p>
+                                                <p>メールフォーマットが作成されない場合は、お手数ですがフォーマットの内容をメールに記載して上記メールアドレス宛に送信してください。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-container">
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">お名前 <span class="required">*</span></label>
+                                        <input type="text" id="name" name="name" required placeholder="山田 太郎">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">メールアドレス <span class="required">*</span></label>
+                                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">電話番号</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="090-1234-5678">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="experience">バドミントン経験</label>
+                                        <select id="experience" name="experience">
+                                            <option value="">選択してください</option>
+                                            <option value="beginner">初心者（ほとんど経験なし）</option>
+                                            <option value="elementary">初級者（少し経験あり）</option>
+                                            <option value="returning">経験者（ブランクあり）</option>
+                                            <option value="intermediate">中級者</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>参加希望回</label>
+                                    <div class="checkbox-grid">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-10-25">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第1回（10月25日）</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-11-29">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第2回（11月29日）</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-12-20">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第3回（12月20日）</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="sessions" value="2025-01-25">
+                                            <span class="checkmark"></span>
+                                            <span class="checkbox-label">第4回（1月25日）</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="checkbox-item practice-option">
+                                        <input type="checkbox" id="practice" name="practice" value="yes">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">プラクティス（試合形式練習）にも参加希望（+300円）</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">メッセージ・質問等</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="ご質問やご要望があればお聞かせください"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                    お申し込み
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-info">
+                        <h3>ステップアップバドミントンクラブ</h3>
+                        <p>初心者から始める、楽しいバドミントンライフ</p>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>お問い合わせ</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:subc202510@gmail.com">subc202510@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="footer-location">
+                    <h4>開催場所</h4>
+                    <div class="location-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>横浜市立大岡小学校</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ステップアップバドミントンクラブ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js?v=12"></script>
+</body>
+</html>

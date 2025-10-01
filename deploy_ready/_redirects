@@ -1,0 +1,4 @@
+# Redirects for Cloudflare Pages
+
+# Fallback for SPA behavior (if needed in future)
+/*    /index.html   200

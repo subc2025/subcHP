@@ -1,0 +1,12 @@
+# GitHub Pages設定有効化
+
+このコミットによりGitHub Pages設定を有効化します。
+
+## 設定内容
+- Source: Deploy from a branch  
+- Branch: main
+- Folder: / (root)
+
+## 期待される固定URL
+https://subc2025.github.io/subcHP/
+
