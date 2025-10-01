@@ -77,6 +77,11 @@ body::after {
     100% { transform: rotate(360deg); }
 }
 
+/* PC-only line breaks - default visible on desktop */
+.pc-only-br {
+    display: inline;
+}
+
 
 
 
@@ -3083,6 +3088,11 @@ section {
             rgba(255, 255, 255, 0.25) 0%,
             rgba(248, 250, 255, 0.3) 100%) !important;
         border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    /* PC-only line breaks hidden on mobile */
+    .pc-only-br {
+        display: none !important;
     }
     
     /* Mobile text readability improvements */
