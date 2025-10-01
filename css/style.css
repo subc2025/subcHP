@@ -2911,21 +2911,23 @@ section {
     }
     
     .contact-content {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
     }
     
-    /* Contact info mobile positioning - left side */
+    /* Contact info mobile positioning - top */
     .contact-info {
         order: 1 !important;
-        padding-right: 0.5rem !important;
+        padding: 0 !important;
+        margin-bottom: 1rem !important;
     }
     
-    /* Form container mobile positioning - right side */
+    /* Form container mobile positioning - bottom */
     .form-container {
         order: 2 !important;
-        padding-left: 0.5rem !important;
+        padding: 1.5rem !important;
+        margin-top: 0 !important;
     }
     
     /* Contact title mobile optimization */
@@ -2943,22 +2945,30 @@ section {
     /* Contact info mobile optimization */
     .email-instructions {
         margin-top: 0.8rem !important;
-        padding: 0.8rem !important;
+        padding: 1rem !important;
+        border-radius: 8px !important;
     }
     
     .instruction-text p {
-        font-size: 0.8rem !important;
-        line-height: 1.4 !important;
-        margin-bottom: 0.4rem !important;
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0.5rem !important;
     }
     
     /* Mobile form optimization */
-    .form-container {
-        padding: 1.5rem !important;
-    }
-    
     .contact-form {
         gap: 1.2rem !important;
+    }
+    
+    /* Mobile contact info styling */
+    .info-text h4 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .info-text a {
+        font-size: 0.95rem !important;
+        word-break: break-all !important;
     }
     
     .footer-content {
