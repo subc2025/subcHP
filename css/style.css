@@ -3258,6 +3258,29 @@ section {
         text-align: left;
     }
     
+    /* フォームフィールドのモバイル対応 */
+    .form-container {
+        padding: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    
+    .checkbox-item .checkbox-label {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    
+    /* モバイル専用改行 */
+    .mobile-br {
+        display: inline;
+    }
+    
     .step-up-arrow {
         font-size: 1.2rem;
         margin-left: 0.2rem;
@@ -3630,5 +3653,12 @@ textarea:focus {
     
     .tab-content {
         display: block !important;
+    }
+}
+
+/* デスクトップではモバイル専用改行を無効 */
+@media (min-width: 769px) {
+    .mobile-br {
+        display: none;
     }
 }
