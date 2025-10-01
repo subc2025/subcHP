@@ -501,9 +501,9 @@ function resetForm() {
 function scrollToForm() {
     const contactSection = document.getElementById('contact-form');
     if (contactSection) {
-        // First switch to lessons tab if not already active
-        switchTab('lessons');
-        updateTabButtonStates('lessons');
+        // First switch to application tab if not already active
+        switchTab('application');
+        updateTabButtonStates('application');
         
         // Wait for tab switch animation, then scroll to form
         setTimeout(() => {
