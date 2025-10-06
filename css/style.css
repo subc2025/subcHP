@@ -160,6 +160,26 @@ body {
     transform: translateZ(0);
 }
 
+/* 全ページでアニメーションを完全に無効化 */
+* {
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+}
+
+/* ホバー効果も無効化 */
+*:hover {
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
 
 
 
@@ -3344,9 +3364,11 @@ section {
     .form-group input,
     .form-group select,
     .form-group textarea {
-        max-width: 50%;
+        max-width: 80%;
         box-sizing: border-box;
-        width: 50%;
+        width: 80%;
+        margin-right: 10%;
+        margin-left: 5%;
     }
     
     .checkbox-item .checkbox-label {
