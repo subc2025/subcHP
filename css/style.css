@@ -3344,9 +3344,9 @@ section {
     .form-group input,
     .form-group select,
     .form-group textarea {
-        max-width: 100%;
+        max-width: 50%;
         box-sizing: border-box;
-        width: 100%;
+        width: 50%;
     }
     
     .checkbox-item .checkbox-label {
