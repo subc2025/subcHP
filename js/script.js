@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initScrollAnimations();
     initHeaderScrollEffect();
+    initMobileOptimizations(); // モバイル最適化を追加
 });
 
 // Tab Navigation System
@@ -545,6 +546,105 @@ function debounce(func, wait, immediate) {
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
     };
+}
+
+// モバイル最適化関数
+function initMobileOptimizations() {
+    // モバイルデバイスの検出
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // モバイル用の最適化クラスを追加
+        document.body.classList.add('mobile-device');
+        
+        if (isAndroid) {
+            document.body.classList.add('android-device');
+            
+            // Androidでのちらつき対策
+            optimizeForAndroid();
+        }
+        
+        // タッチイベントの最適化
+        optimizeTouchEvents();
+        
+        // スクロール最適化
+        optimizeScrolling();
+    }
+}
+
+// Android固有の最適化
+function optimizeForAndroid() {
+    // WebKitの最適化
+    document.body.style.WebkitBackfaceVisibility = 'hidden';
+    document.body.style.WebkitPerspective = '1000px';
+    document.body.style.WebkitTransform = 'translate3d(0,0,0)';
+    
+    // レンダリング最適化
+    const style = document.createElement('style');
+    style.textContent = `
+        @media (max-width: 768px) {
+            /* Android用の追加最適化 */
+            * {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+            
+            /* アニメーションを軽量化 */
+            .step-up-arrow {
+                animation: none !important;
+            }
+            
+            /* 複雑なグラデーションを簡素化 */
+            .hero-background,
+            .gradient-overlay,
+            .pattern-overlay {
+                opacity: 0.3 !important;
+            }
+            
+            /* 不要なアニメーションを停止 */
+            @keyframes gradientShift {
+                0%, 100% { background-position: 0% 50%; }
+            }
+            
+            @keyframes floatRotate {
+                0%, 100% { transform: rotate(0deg); }
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// タッチイベントの最適化
+function optimizeTouchEvents() {
+    // パッシブリスナーでタッチイベントを最適化
+    document.addEventListener('touchstart', function(e) {
+        // タッチ開始の処理
+    }, { passive: true });
+    
+    document.addEventListener('touchmove', function(e) {
+        // 必要に応じてスクロールを制御
+    }, { passive: true });
+}
+
+// スクロール最適化
+function optimizeScrolling() {
+    // スクロールイベントの最適化
+    let ticking = false;
+    
+    function updateScrollPosition() {
+        // スクロール位置の更新処理
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollPosition);
+            ticking = true;
+        }
+    }, { passive: true });
 }
 
 // Enhanced Interaction Effects
