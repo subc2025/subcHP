@@ -412,50 +412,160 @@
                     </div>
                 </div>
                 
-                <!-- Schedule Section -->
-                <div class="schedule-section">
-                    <h3 class="schedule-title">
-                        <i class="fas fa-calendar-alt"></i>
-                        開催スケジュール
-                    </h3>
-                    <div class="schedule-grid">
-                        <div class="schedule-card">
-                            <div class="schedule-number">01</div>
-                            <div class="schedule-content">
-                                <h4>第1回</h4>
-                                <div class="schedule-date">2025年10月25日（土）</div>
-                                <div class="schedule-time">18:00〜20:00</div>
-                            </div>
-                        </div>
-                        
-                        <div class="schedule-card">
-                            <div class="schedule-number">02</div>
-                            <div class="schedule-content">
-                                <h4>第2回</h4>
-                                <div class="schedule-date">2025年11月22日（土）</div>
-                                <div class="schedule-time">18:00〜20:00</div>
-                            </div>
-                        </div>
-                        
-                        <div class="schedule-card">
-                            <div class="schedule-number">03</div>
-                            <div class="schedule-content">
-                                <h4>第3回</h4>
-                                <div class="schedule-date">2025年12月20日（土）</div>
-                                <div class="schedule-time">18:00〜20:00</div>
-                            </div>
-                        </div>
-                        
-                        <div class="schedule-card">
-                            <div class="schedule-number">04</div>
-                            <div class="schedule-content">
-                                <h4>第4回</h4>
-                                <div class="schedule-date">2026年1月24日（土）</div>
-                                <div class="schedule-time">18:00〜20:00</div>
-                            </div>
-                        </div>
-                    </div>
+<!-- Schedule Section -->
+<div class="schedule-section">
+    <h3 class="schedule-title">
+        <i class="fas fa-calendar-alt"></i>
+        開催スケジュール
+    </h3>
+    <div class="schedule-grid">
+        <div class="schedule-card">
+            <div class="schedule-number">01</div>
+            <div class="schedule-content">
+                <h4>第1回</h4>
+                <div class="schedule-date">2025年10月25日（土）</div>
+                <div class="schedule-time">18:00〜20:00</div>
+            </div>
+        </div>
+        
+        <div class="schedule-card">
+            <div class="schedule-number">02</div>
+            <div class="schedule-content">
+                <h4>第2回</h4>
+                <div class="schedule-date">2025年11月22日（土）</div>
+                <div class="schedule-time">18:00〜20:00</div>
+            </div>
+        </div>
+        
+        <div class="schedule-card">
+            <div class="schedule-number">03</div>
+            <div class="schedule-content">
+                <h4>第3回</h4>
+                <div class="schedule-date">2025年12月20日（土）</div>
+                <div class="schedule-time">18:00〜20:00</div>
+            </div>
+        </div>
+        
+        <div class="schedule-card">
+            <div class="schedule-number">04</div>
+            <div class="schedule-content">
+                <h4>第4回</h4>
+                <div class="schedule-date">2026年1月24日（土）</div>
+                <div class="schedule-time">18:00〜20:00</div>
+            </div>
+        </div>
+    </div>
+</div>
+🟢 修正後のコード（新しい）
+Copy<!-- Schedule Section -->
+<div class="schedule-section">
+    <h3 class="schedule-title">
+        <i class="fas fa-calendar-alt"></i>
+        開催スケジュール
+    </h3>
+    
+    <!-- ========== 第1期 ========== -->
+    <div class="period-group">
+        <h4 class="period-title">＜第1期＞</h4>
+        <div class="schedule-grid">
+            <div class="schedule-card completed">
+                <div class="schedule-number">01</div>
+                <div class="schedule-content">
+                    <h4>第1回</h4>
+                    <div class="schedule-date">2025年10月25日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                    <span class="status-badge ended">終了</span>
                 </div>
+            </div>
+            
+            <div class="schedule-card completed">
+                <div class="schedule-number">02</div>
+                <div class="schedule-content">
+                    <h4>第2回</h4>
+                    <div class="schedule-date">2025年11月29日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                    <span class="status-badge ended">終了</span>
+                </div>
+            </div>
+            
+            <div class="schedule-card completed">
+                <div class="schedule-number">03</div>
+                <div class="schedule-content">
+                    <h4>第3回</h4>
+                    <div class="schedule-date">2025年12月20日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                    <span class="status-badge ended">終了</span>
+                </div>
+            </div>
+            
+            <div class="schedule-card active">
+                <div class="schedule-number">04</div>
+                <div class="schedule-content">
+                    <h4>第4回</h4>
+                    <div class="schedule-date">2026年1月24日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                    <span class="status-badge accepting">申込受付中</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========== 第2期 ========== -->
+    <div class="period-group">
+        <h4 class="period-title">＜第2期＞</h4>
+        <div class="schedule-grid">
+            <div class="schedule-card">
+                <div class="schedule-number">01</div>
+                <div class="schedule-content">
+                    <h4>第1回</h4>
+                    <div class="schedule-date">2026年2月28日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                </div>
+            </div>
+            
+            <div class="schedule-card">
+                <div class="schedule-number">02</div>
+                <div class="schedule-content">
+                    <h4>第2回</h4>
+                    <div class="schedule-date">2026年3月28日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                </div>
+            </div>
+            
+            <div class="schedule-card">
+                <div class="schedule-number">03</div>
+                <div class="schedule-content">
+                    <h4>第3回</h4>
+                    <div class="schedule-date">2026年4月25日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                </div>
+            </div>
+            
+            <div class="schedule-card">
+                <div class="schedule-number">04</div>
+                <div class="schedule-content">
+                    <h4>第4回</h4>
+                    <div class="schedule-date">2026年5月30日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                </div>
+            </div>
+            
+            <div class="schedule-card">
+                <div class="schedule-number">05</div>
+                <div class="schedule-content">
+                    <h4>第5回</h4>
+                    <div class="schedule-date">2026年6月27日（土）</div>
+                    <div class="schedule-time">18:00〜20:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 注釈 -->
+    <p class="schedule-note">
+        ＊毎月１回土曜開催（選挙などで急遽会場が使えなくなった場合は中止かリスケします）
+    </p>
+</div>
                 
                 <!-- Coach Info -->
                 <div class="coach-section">
