@@ -3896,3 +3896,20 @@ textarea:focus {
         transform: scale(1.01);
     }
 }
+/* ========================================
+   フォーム内の期別ラベル
+======================================== */
+.period-label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    padding-left: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* 最初の期別ラベルは上マージンなし */
+.form-group .period-label:first-of-type {
+    margin-top: 10px;
+}
