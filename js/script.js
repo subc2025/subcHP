@@ -16,7 +16,27 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initHeaderScrollEffect();
     initMobileOptimizations(); // モバイル最適化を追加
+    initPastRecordsToggle(); // 過去の開催実績の折りたたみ
 });
+
+// 過去の開催実績（第1期・第2期）の折りたたみ開閉
+function initPastRecordsToggle() {
+    const toggleBtn = document.getElementById('pastRecordsToggle');
+    const content = document.getElementById('pastRecordsContent');
+
+    if (!toggleBtn || !content) return;
+
+    toggleBtn.addEventListener('click', function() {
+        const isOpen = content.classList.toggle('open');
+        toggleBtn.classList.toggle('open', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+        const label = toggleBtn.querySelector('span');
+        if (label) {
+            label.textContent = isOpen ? 'これまでの開催実績を閉じる' : 'これまでの開催実績を見る';
+        }
+    });
+}
 
 // Tab Navigation System
 function initTabNavigation() {
@@ -355,11 +375,12 @@ function submitForm() {
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
     submitButton.disabled = true;
 
-    // Collect selected sessions
+    // Collect selected sessions (表示ラベルをそのまま使うので、期が変わっても書き換え不要)
     const selectedSessions = [];
     const sessionCheckboxes = contactForm.querySelectorAll('input[name="sessions"]:checked');
     sessionCheckboxes.forEach(checkbox => {
-        selectedSessions.push(checkbox.value);
+        const labelEl = checkbox.closest('.checkbox-item')?.querySelector('.checkbox-label');
+        selectedSessions.push(labelEl ? labelEl.textContent.trim() : checkbox.value);
     });
 
     // Prepare form data
@@ -415,13 +436,7 @@ function createEmailBody(data) {
     if (data.sessions.length > 0) {
         body += `\n参加希望回:\n`;
         data.sessions.forEach(session => {
-            const dateMap = {
-                '2025-10-25': '第1回（10月25日）',
-                '2025-11-29': '第2回（11月29日）',
-                '2025-12-20': '第3回（12月20日）',
-                '2025-01-25': '第4回（1月25日）'
-            };
-            body += `- ${dateMap[session]}\n`;
+            body += `- ${session}\n`;
         });
     }
     
