@@ -4045,7 +4045,7 @@ textarea:focus {
 
 .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-top: 16px;
 }
@@ -4055,11 +4055,6 @@ textarea:focus {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     aspect-ratio: 4 / 3;
-}
-
-.gallery-item.large {
-    grid-column: span 3;
-    aspect-ratio: 16 / 9;
 }
 
 .gallery-item img {
@@ -4077,9 +4072,6 @@ textarea:focus {
 @media (max-width: 768px) {
     .photo-gallery {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .gallery-item.large {
-        grid-column: span 2;
     }
 }
 
